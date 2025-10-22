@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PT DEWA INDAH WISATA | Pemesanan Perjalanan</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="wrap row">
+      <div class="brand">
+        <!-- Ganti src logo di bawah ini -->
+        <img src="logo.png" alt="Logo PT Dewa Indah Wisata" />
+        <h1>PT DEWA INDAH WISATA</h1>
+      </div>
+      <nav>
+        <a href="#visi">Visi & Misi</a>
+        <a href="#galeri">Galeri Armada</a>
+        <a href="#pesan">Pesan Tiket</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap hero">
+      <div class="hero-card">
+        <h2>Transportasi Antar Kota yang Nyaman, Aman, Tepat Waktu</h2>
+        <p>Kini pemesanan makin mudah. Isi formulir, pilih jadwal, bayar, lalu konfirmasi via WhatsApp <b>wa.me/62895404019535</b>.</p>
+      </div>
+    </div>
+
+    <section id="visi">
+      <div class="wrap">
+        <h2 class="section-title">Visi & Misi PT DEWA INDAH WISATA</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3>Visi</h3>
+            <p>Menjadi penyedia layanan perjalanan darat terpercaya di Indonesia dengan standar keselamatan, kenyamanan, dan ketepatan waktu tingkat tinggi, didukung teknologi pemesanan yang sederhana dan transparan.</p>
+          </div>
+          <div class="card">
+            <h3>Misi</h3>
+            <ul>
+              <li>Menjaga keselamatan penumpang sebagai prioritas utama.</li>
+              <li>Menyediakan armada yang bersih, nyaman, dan terawat.</li>
+              <li>Menjamin ketepatan waktu keberangkatan dan kedatangan.</li>
+              <li>Menghadirkan harga yang jelas tanpa biaya tersembunyi.</li>
+              <li>Memudahkan pemesanan dan konfirmasi melalui sistem digital.</li>
+              <li>Melayani pelanggan dengan cepat, ramah, dan profesional.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeri">
+      <div class="wrap">
+        <h2 class="section-title">Galeri Armada</h2>
+        <div class="gallery">
+          <figure>
+            <img src="hiace.jpg" alt="Hiace Commuter" />
+            <figcaption>Hiace Commuter</figcaption>
+          </figure>
+          <figure>
+            <img src="elf.jpg" alt="Isuzu Elf Long" />
+            <figcaption>Isuzu Elf Long</figcaption>
+          </figure>
+          <figure>
+            <img src="reborn1.jpg" alt="Innova Reborn" />
+            <figcaption>Medium Bus</figcaption>
+          </figure>
+          <figure>
+            <img src="j3.jpg" alt="Big Bus" />
+            <figcaption>Big Bus</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="pesan">
+      <div class="wrap">
+        <h2 class="section-title">Formulir Pemesanan</h2>
+        <div class="card">
+          <div class="stepper">
+            <span class="pill active" id="pill-1">Step 1 • Isi Data</span>
+            <span class="pill" id="pill-2">Step 2 • Pilih Jadwal</span>
+            <span class="pill" id="pill-3">Step 3 • Pembayaran</span>
+          </div>
+
+          <!-- STEP 1 -->
+          <div id="step-1">
+            <div class="form-grid">
+              <div>
+                <label>Nama Lengkap</label>
+                <input id="nama" type="text" placeholder="Nama sesuai KTP" />
+              </div>
+              <div>
+                <label>Nomor Handphone</label>
+                <input id="hp" type="tel" placeholder="08xxxxxxxxxx" />
+              </div>
+              <div>
+                <label>Kota Asal</label>
+                <select id="asal"></select>
+              </div>
+              <div>
+                <label>Kota Tujuan</label>
+                <select id="tujuan"></select>
+              </div>
+              <div>
+                <label>Tanggal Keberangkatan</label>
+                <input id="tanggal" type="date" />
+              </div>
+              <div>
+                <label>Jumlah Orang</label>
+                <select id="pax"></select>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+            <div class="row" style="align-items:center; justify-content:space-between;">
+              <div>
+                <div class="muted">Harga per orang</div>
+                <div class="price" id="hargaPerOrang">Rp0</div>
+              </div>
+              <div>
+                <div class="muted">Total</div>
+                <div class="price" id="hargaTotal">Rp0</div>
+              </div>
+              <div style="margin-left:auto">
+                <button id="to-step-2" class="btn">Klik Tiket</button>
+              </div>
+            </div>
+            <p class="hint">Harga di atas adalah <b>harga per orang x jumlah orang</b>.</p>
+          </div>
+
+          <!-- STEP 2 -->
+          <div id="step-2" style="display:none">
+            <p>Pilih Jadwal Keberangkatan:</p>
+            <div class="time-grid">
+              <button class="time" data-time="09:00">Pagi • 09:00</button>
+              <button class="time" data-time="12:00">Siang • 12:00</button>
+              <button class="time" data-time="17:00">Sore • 17:00</button>
+              <button class="time" data-time="20:00">Malam • 20:00</button>
+            </div>
+            <p class="hint">Setelah memilih jam, Anda otomatis lanjut ke Step 3.</p>
+          </div>
+
+          <!-- STEP 3 -->
+          <div id="step-3" style="display:none">
+            <p>Pilih Metode Pembayaran:</p>
+            <div class="payments">
+              <div class="paycard" data-method="COD">
+                <img src="cod.jpg" alt="Cash On Driver" />
+                <div class="pay-meta">
+                  <b>Cash On Driver</b>
+                  <span>Bayar langsung ke pengemudi saat penjemputan.</span>
+                </div>
+              </div>
+              <div class="paycard" data-method="DANA">
+                <img src="dana.jpg" alt="DANA" />
+                <div class="pay-meta">
+                  <b>DANA</b>
+                  <span>0881-5898-569 • a.n. Yenny Surya Ng</span>
+                </div>
+              </div>
+              <div class="paycard" data-method="BCA">
+                <img src="bca.jpg" alt="BCA" />
+                <div class="pay-meta">
+                  <b>BCA</b>
+                  <span>1140255943 • a.n. Rofiqoh</span>
+                </div>
+              </div>
+              <div class="paycard" data-method="Mandiri">
+                <img src="mandiri.jpg" alt="Mandiri" />
+                <div class="pay-meta">
+                  <b>Mandiri</b>
+                  <span>1120011382657 • a.n. Yusman Toha</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+            <div class="row" style="justify-content:space-between; align-items:center">
+              <div>
+                <div class="muted">Ringkasan</div>
+                <div id="ringkasan" style="font-weight:700"></div>
+              </div>
+              <button id="pay" class="btn" disabled>Bayar Sekarang</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      &copy; <span id="year"></span> PT DEWA INDAH WISATA • Konfirmasi WhatsApp: <a href="https://wa.me/62895404019535" target="_blank" rel="noopener">wa.me/62895404019535</a>
+    </footer>
+  </main>
+
+  <!-- Modal sukses -->
+  <div class="modal" id="modal-ok">
+    <div class="box">
+      <div class="check">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      </div>
+      <h3>Pembayaran Berhasil</h3>
+      <p>Terima kasih. Detail pesanan Anda bisa dikirim ke WhatsApp agar tim kami menindaklanjuti penjemputan.</p>
+      <div class="row" style="justify-content:center; gap:10px; margin-top:10px">
+        <a id="wa-link" class="btn wa-btn" href="#" target="_blank" rel="noopener">Kirim Detail ke WhatsApp</a>
+        <button class="btn outline" onclick="document.getElementById('modal-ok').style.display='none'">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
